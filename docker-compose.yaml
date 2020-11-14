@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  marp:
+    build:
+      context: .
+    image: template-marp-cli
+    volumes:
+      - "./PITCHME.md:/home/marp/app/PITCHME.md"
+      - "./assets:/home/marp/app/assets"
+      - "./themes:/home/marp/app/themes"
+      - "./dist:/home/marp/app/dist"
+    ports:
+      - 8080:8080
+      - 37717:37717
